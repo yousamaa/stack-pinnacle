@@ -62,7 +62,7 @@ export default function Header({
             />
           </div>
         </div>
-        <nav className="hidden lg:flex gap-6">
+        <nav className="hidden lg:flex gap-10">
           <button
             onClick={() => scrollToSection(servicesRef)}
             className="text-[#172737] hover:text-[#5ebc66] transition-colors hover:cursor-pointer"

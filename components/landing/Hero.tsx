@@ -56,7 +56,7 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-          <div className="flex justify-center animate-item">
+          <div className="flex justify-center animate-item border-2 border-gray-200 rounded-xl">
             <Image
               src="https://racxstudio.vercel.app/static/media/BuildWebsite.2d15641dcb298d3ebdbc.png"
               width={550}
