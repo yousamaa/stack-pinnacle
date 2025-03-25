@@ -54,7 +54,7 @@ export default function Header({
     >
       <div className="w-full px-6 md:px-12 lg:px-40 flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-64 pt-1 cursor-pointer" onClick={handleLogoClick}>
+          <div className="w-32 md:w-64 pt-1 cursor-pointer" onClick={handleLogoClick}>
             <img
               src="/stack-pinnacle-logo-no-background.png"
               alt="Stack Pinnacle Logo"
@@ -62,7 +62,7 @@ export default function Header({
             />
           </div>
         </div>
-        <nav className="hidden md:flex gap-6">
+        <nav className="hidden lg:flex gap-6">
           <button
             onClick={() => scrollToSection(servicesRef)}
             className="text-[#172737] hover:text-[#5ebc66] transition-colors hover:cursor-pointer"

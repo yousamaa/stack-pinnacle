@@ -9,7 +9,7 @@ import gsap from "gsap";
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
-  const words = ["Technology", "Innovation", "Solutions", "Infrastructure", "Systems", "Software", "Computing"];
+  const words = ["Innovation", "Solutions" ,"Systems", "Software", "Computing"];
 
   useEffect(() => {
     if (typeof window === "undefined") return;
