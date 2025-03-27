@@ -33,9 +33,9 @@ export default function Hero() {
         <div
           className={cn(
             "absolute inset-0",
-            "[background-size:20px_20px]",
-            "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-            "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+            "[background-size:40px_40px]",
+            "[background-image:radial-gradient(#d4d4d4_2px,transparent_2px)]",
+            "dark:[background-image:radial-gradient(#404040_2px,transparent_2px)]"
           )}
         />
         <div className="w-full px-6 md:px-10 lg:px-24">
