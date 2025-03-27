@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import gsap from "gsap";
 
@@ -22,6 +22,7 @@ export default function Header({
   contactRef,
 }: HeaderProps) {
   const headerRef = useRef<HTMLElement>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -47,14 +48,29 @@ export default function Header({
     }
   };
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const navItems = [
+    { name: "Services", ref: servicesRef },
+    { name: "About", ref: aboutRef },
+    { name: "Team", ref: teamRef },
+    { name: "Testimonials", ref: testimonialsRef },
+    { name: "Contact", ref: contactRef },
+  ];
+
   return (
     <header
       ref={headerRef}
       className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
-      <div className="w-full px-6 md:px-12 lg:px-40 flex h-16 items-center justify-between">
+      <div className="w-full px-6 md:px-12 lg:px-20 flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-32 md:w-64 pt-1 cursor-pointer" onClick={handleLogoClick}>
+          <div
+            className="w-32 md:w-64 pt-1 cursor-pointer"
+            onClick={handleLogoClick}
+          >
             <img
               src="/stack-pinnacle-logo-no-background.png"
               alt="Stack Pinnacle Logo"
@@ -62,42 +78,73 @@ export default function Header({
             />
           </div>
         </div>
-        <nav className="hidden lg:flex gap-10">
+
+        <div className="lg:hidden">
           <button
-            onClick={() => scrollToSection(servicesRef)}
-            className="text-[#172737] hover:text-[#5ebc66] transition-colors hover:cursor-pointer"
+            onClick={toggleMobileMenu}
+            className="p-2 focus:outline-none"
+            aria-label="Toggle menu"
           >
-            Services
+            <div className="w-6 flex flex-col gap-1">
+              <span
+                className={`block h-0.5 w-full bg-[#172737] transition-all duration-300 ${
+                  mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+                }`}
+              ></span>
+              <span
+                className={`block h-0.5 w-full bg-[#172737] transition-all duration-300 ${
+                  mobileMenuOpen ? "opacity-0" : ""
+                }`}
+              ></span>
+              <span
+                className={`block h-0.5 w-full bg-[#172737] transition-all duration-300 ${
+                  mobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                }`}
+              ></span>
+            </div>
           </button>
-          <button
-            onClick={() => scrollToSection(aboutRef)}
-            className="text-[#172737] hover:text-[#5ebc66] transition-colors hover:cursor-pointer"
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection(teamRef)}
-            className="text-[#172737] hover:text-[#5ebc66] transition-colors hover:cursor-pointer"
-          >
-            Team
-          </button>
-          <button
-            onClick={() => scrollToSection(testimonialsRef)}
-            className="text-[#172737] hover:text-[#5ebc66] transition-colors hover:cursor-pointer"
-          >
-            Testimonials
-          </button>
-          <button
-            onClick={() => scrollToSection(contactRef)}
-            className="text-[#172737] hover:text-[#5ebc66] transition-colors hover:cursor-pointer"
-          >
-            Contact
-          </button>
-        </nav>
-        <Button className="bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white hover:cursor-pointer">
-          Get Started
-        </Button>
+        </div>
+
+        <div className="hidden lg:flex items-center gap-8">
+          <nav className="flex gap-6">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.ref)}
+                className="text-[#172737] hover:text-[#5ebc66] transition-colors hover:cursor-pointer font-medium nav-item"
+              >
+                {item.name}
+              </button>
+            ))}
+          </nav>
+          <Button className="bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white hover:cursor-pointer">
+            Get Started
+          </Button>
+        </div>
       </div>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white p-4 shadow-md">
+          <nav className="flex flex-col gap-4">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => {
+                  scrollToSection(item.ref);
+                  setMobileMenuOpen(false);
+                }}
+                className="text-[#172737] hover:text-[#5ebc66] transition-colors hover:cursor-pointer py-2 text-left nav-item"
+              >
+                {item.name}
+              </button>
+            ))}
+            <Button className="bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white hover:cursor-pointer mt-2">
+              Get Started
+            </Button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

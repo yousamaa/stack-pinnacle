@@ -10,6 +10,7 @@ import {
   Smartphone,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const serviceCards = [
   {
@@ -57,16 +58,16 @@ const Services = forwardRef<HTMLElement>((props, ref) => {
       id="services"
       className="w-full py-12 md:py-24 bg-[#c5ddca]/30"
     >
-      <div className="w-full px-8 md:px-16 lg:px-24 xl:px-32">
+      <div className="w-full px-8 md:px-16 lg:px-24">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-[#5ebc66]/20 px-3 py-1 text-sm text-[#5ebc66]">
               Our Services
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#172737]">
+            <h2 className="heading-2 text-[#172737]">
               Comprehensive IT Solutions
             </h2>
-            <p className="max-w-[900px] text-[#848b94] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-lg text-[#848b94]">
               We offer a wide range of IT services to meet your business needs.
             </p>
           </div>
@@ -81,16 +82,19 @@ const Services = forwardRef<HTMLElement>((props, ref) => {
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5ebc66]/10 text-[#5ebc66] mb-4 group-hover:bg-white/20 group-hover:text-white transition-all duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-[#172737] mb-2 group-hover:text-white transition-colors duration-300">
+              <h3 className="heading-5 text-[#172737] mb-2 group-hover:text-white transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="text-[#848b94] group-hover:text-white/90 transition-colors duration-300 flex-grow">
+              <p className="text-base text-[#848b94] group-hover:text-white/90 transition-colors duration-300 flex-grow">
                 {service.description}
               </p>
-              <div className="mt-4 flex items-center text-[#5ebc66] group-hover:text-white transition-all duration-300 group-hover:opacity-100">
-                <span className="text-sm font-medium">Learn more</span>
+              <Link
+                href="/"
+                className="mt-4 flex items-center text-[#5ebc66] group-hover:text-white transition-all duration-300 group-hover:opacity-100 hover:cursor-pointer link"
+              >
+                <span className="font-medium">Learn more</span>
                 <ArrowRight className="ml-1 h-4 w-4" />
-              </div>
+              </Link>
             </div>
           ))}
         </div>

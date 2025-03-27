@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -55,39 +56,41 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
       id="contact"
       className="w-full py-12 md:py-24 bg-[#c5ddca]/30"
     >
-      <div className="w-full px-6 md:px-12 lg:px-40">
+      <div className="w-full px-6 md:px-12 lg:px-24">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="space-y-4">
             <div className="inline-block rounded-lg bg-[#5ebc66]/20 px-3 py-1 text-sm text-[#5ebc66] contact-item">
               Contact Us
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-[#172737] contact-item">
+            <h2 className="heading-2 text-[#172737] contact-item">
               Get in Touch
             </h2>
-            <p className="text-[#848b94] contact-item">
+            <p className="text-base text-[#848b94] contact-item">
               Ready to transform your business with our IT solutions? Contact us
               today to schedule a consultation with one of our experts.
             </p>
             <div className="space-y-2">
               <div className="flex items-center contact-item">
                 <div className="h-10 w-10 rounded-full bg-[#5ebc66]/10 flex items-center justify-center mr-3">
-                  <span className="font-bold text-[#5ebc66]">📍</span>
+                  <FaMapMarkerAlt className="text-[#5ebc66] text-lg" />
                 </div>
-                <p className="text-[#172737]">
+                <p className="text-base text-[#172737]">
                   123 Tech Street, Silicon Valley, CA 94043
                 </p>
               </div>
               <div className="flex items-center contact-item">
                 <div className="h-10 w-10 rounded-full bg-[#5ebc66]/10 flex items-center justify-center mr-3">
-                  <span className="font-bold text-[#5ebc66]">📞</span>
+                  <FaPhone className="text-[#5ebc66] text-lg" />
                 </div>
-                <p className="text-[#172737]">(123) 456-7890</p>
+                <p className="text-base text-[#172737]">(123) 456-7890</p>
               </div>
               <div className="flex items-center contact-item">
                 <div className="h-10 w-10 rounded-full bg-[#5ebc66]/10 flex items-center justify-center mr-3">
-                  <span className="font-bold text-[#5ebc66]">✉️</span>
+                  <FaEnvelope className="text-[#5ebc66] text-lg" />
                 </div>
-                <p className="text-[#172737]">info@stackpinnacle.com</p>
+                <p className="text-base text-[#172737]">
+                  info@stackpinnacle.com
+                </p>
               </div>
             </div>
           </div>
@@ -104,7 +107,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                   <Input
                     id="first-name"
                     placeholder="John"
-                    className="border-[#c5ddca] focus-visible:ring-[#5ebc66]"
+                    className="border-[#c5ddca] focus-visible:ring-[#5ebc66] mt-1"
                   />
                 </div>
                 <div className="space-y-2">
@@ -117,7 +120,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                   <Input
                     id="last-name"
                     placeholder="Doe"
-                    className="border-[#c5ddca] focus-visible:ring-[#5ebc66]"
+                    className="border-[#c5ddca] focus-visible:ring-[#5ebc66] mt-1"
                   />
                 </div>
               </div>
@@ -132,7 +135,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                   id="email"
                   placeholder="john.doe@example.com"
                   type="email"
-                  className="border-[#c5ddca] focus-visible:ring-[#5ebc66]"
+                  className="border-[#c5ddca] focus-visible:ring-[#5ebc66] mt-1"
                 />
               </div>
               <div className="space-y-2">
@@ -145,7 +148,7 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                 <Input
                   id="company"
                   placeholder="Your Company"
-                  className="border-[#c5ddca] focus-visible:ring-[#5ebc66]"
+                  className="border-[#c5ddca] focus-visible:ring-[#5ebc66] mt-1"
                 />
               </div>
               <div className="space-y-2">
@@ -158,10 +161,13 @@ const Contact = forwardRef<HTMLElement>((props, ref) => {
                 <Textarea
                   id="message"
                   placeholder="How can we help you?"
-                  className="min-h-[120px] border-[#c5ddca] focus-visible:ring-[#5ebc66]"
+                  className="min-h-[120px] border-[#c5ddca] focus-visible:ring-[#5ebc66] mt-1"
                 />
               </div>
-              <Button className="w-full bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white">
+              <Button
+                size="lg"
+                className="w-full bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white mt-2 hover:cursor-pointer"
+              >
                 Send Message
               </Button>
             </form>

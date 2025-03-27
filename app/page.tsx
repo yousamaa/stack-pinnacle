@@ -25,9 +25,20 @@ export default function LandingPage() {
   // Function to handle smooth scrolling
   const scrollToSection = (elementRef: React.RefObject<HTMLElement | null>) => {
     if (elementRef.current) {
-      elementRef.current.scrollIntoView({
+      // Get the header height to offset the scroll position
+      const headerHeight = document.querySelector("header")?.offsetHeight || 0;
+
+      // Calculate the element's position relative to the viewport
+      const elementPosition = elementRef.current.getBoundingClientRect().top;
+
+      // Get the current scroll position
+      const offsetPosition =
+        elementPosition + window.scrollY - headerHeight - 16; // 16px extra padding
+
+      // Scroll to the adjusted position
+      window.scrollTo({
+        top: offsetPosition,
         behavior: "smooth",
-        block: "start",
       });
     }
   };

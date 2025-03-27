@@ -102,7 +102,7 @@ const Testimonials = forwardRef<HTMLElement>((props, ref) => {
 
   return (
     <section ref={setRefs} id="testimonials" className="w-full py-12 md:py-24">
-      <div className="w-full px-8 md:px-16 lg:px-24 xl:px-32">
+      <div className="w-full px-8 md:px-16 lg:px-24">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-[#5ebc66]/20 px-3 py-1 text-sm text-[#5ebc66]">
@@ -146,7 +146,7 @@ const Testimonials = forwardRef<HTMLElement>((props, ref) => {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full border-[#5ebc66] text-[#5ebc66] hover:bg-[#5ebc66] hover:text-white"
+              className="rounded-full border-[#5ebc66] text-[#5ebc66] hover:bg-[#5ebc66] hover:text-white hover:cursor-pointer"
               onClick={prevTestimonial}
             >
               <ChevronLeft className="h-5 w-5" />
@@ -172,7 +172,7 @@ const Testimonials = forwardRef<HTMLElement>((props, ref) => {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full border-[#5ebc66] text-[#5ebc66] hover:bg-[#5ebc66] hover:text-white"
+              className="rounded-full border-[#5ebc66] text-[#5ebc66] hover:bg-[#5ebc66] hover:text-white hover:cursor-pointer"
               onClick={nextTestimonial}
             >
               <ChevronRight className="h-5 w-5" />

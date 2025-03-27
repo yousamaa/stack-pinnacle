@@ -120,7 +120,7 @@ const Team = forwardRef<HTMLElement>((props, ref) => {
 
   return (
     <section ref={setRefs} id="team" className="w-full py-12 md:py-24">
-      <div className="w-full px-8 md:px-16 lg:px-24 xl:px-32">
+      <div className="w-full px-8 md:px-16 lg:px-24">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-[#5ebc66]/20 px-3 py-1 text-sm text-[#5ebc66]">

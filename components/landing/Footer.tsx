@@ -6,7 +6,7 @@ import { Twitter, Linkedin, Github } from "lucide-react"
 export default function Footer() {
   return (
     <footer className="w-full border-t bg-[#172737] text-white py-6">
-      <div className="w-full px-6 md:px-12 lg:px-40">
+      <div className="w-full px-6 md:px-12 lg:px-24">
         <div className="grid gap-10 lg:gap-40 md:grid-cols-2 lg:grid-cols-4 lg:place-items-center p-2">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
@@ -90,7 +90,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-8 border-t border-[#848b94]/20 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-8 border-t border-[#848b94]/20 pt-8 flex flex-col md:flex-row justify-around items-center">
           <p className="text-sm text-[#c5ddca]">© {new Date().getFullYear()} Stack Pinnacle. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="#" className="text-[#c5ddca] hover:text-[#5ebc66]">

@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Stack Pinnacle",
-  description: "Stack Pinnacle is a software development company that provides custom software development services to businesses of all sizes.",
+  description:
+    "Stack Pinnacle is a software development company that provides custom software development services to businesses of all sizes.",
 };
 
 export default function RootLayout({
