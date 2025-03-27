@@ -77,7 +77,7 @@ const Services = forwardRef<HTMLElement>((props, ref) => {
           {serviceCards.map((service, index) => (
             <div
               key={index}
-              className="service-card group relative overflow-hidden rounded-lg border bg-background p-6 shadow-sm transition-all hover:shadow-md hover:border-[#5ebc66] hover:scale-105 duration-300 hover:bg-[#5ebc66] hover:text-white h-[280px] flex flex-col"
+              className="service-card group relative overflow-hidden rounded-lg border bg-background p-6 shadow-lg transition-all hover:shadow-md hover:border-[#5ebc66] hover:scale-105 duration-300 hover:bg-[#5ebc66] hover:text-white h-[280px] flex flex-col"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5ebc66]/10 text-[#5ebc66] mb-4 group-hover:bg-white/20 group-hover:text-white transition-all duration-300">
                 {service.icon}
