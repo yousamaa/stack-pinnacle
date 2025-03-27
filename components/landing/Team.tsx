@@ -120,7 +120,7 @@ const Team = forwardRef<HTMLElement>((props, ref) => {
 
   return (
     <section ref={setRefs} id="team" className="w-full py-12 md:py-24">
-      <div className="w-full px-8 md:px-16 lg:px-24">
+      <div className="w-full px-8 md:px-12">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-[#5ebc66]/20 px-3 py-1 text-sm text-[#5ebc66]">
@@ -140,7 +140,7 @@ const Team = forwardRef<HTMLElement>((props, ref) => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="team-card group relative overflow-hidden rounded-lg border bg-background shadow-sm transition-all hover:shadow-md hover:border-[#5ebc66] transform hover:scale-105 duration-300"
+              className="team-card group relative overflow-hidden rounded-lg border bg-background shadow-sm transition-all hover:shadow-md hover:border-[#5ebc66] transform hover:scale-105 duration-300 flex flex-col h-full"
               style={{
                 opacity: 1,
               }} /* Ensure cards are visible even without JS */
@@ -155,12 +155,14 @@ const Team = forwardRef<HTMLElement>((props, ref) => {
                   priority={index < 2} /* Prioritize loading first two images */
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-[#172737]">
                   {member.name}
                 </h3>
                 <p className="text-sm text-[#5ebc66] mb-2">{member.position}</p>
-                <p className="text-sm text-[#848b94] mb-4">{member.bio}</p>
+                <p className="text-sm text-[#848b94] mb-4 flex-grow">
+                  {member.bio}
+                </p>
                 <div className="flex space-x-3">
                   <a
                     href={member.social.linkedin}
