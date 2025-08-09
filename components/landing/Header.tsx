@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import gsap from "gsap";
 
 interface HeaderProps {
@@ -67,16 +68,20 @@ export default function Header({
     >
       <div className="w-full px-6 md:px-12 lg:px-20 flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <div
+          <button
             className="w-32 md:w-64 pt-1 cursor-pointer"
             onClick={handleLogoClick}
+            aria-label="Go to top"
           >
-            <img
+            <Image
               src="/stack-pinnacle-logo-no-background.png"
               alt="Stack Pinnacle Logo"
-              className="w-full h-full object-cover"
+              width={256}
+              height={64}
+              className="w-full h-auto object-contain"
+              priority
             />
-          </div>
+          </button>
         </div>
 
         <div className="lg:hidden">
@@ -117,7 +122,11 @@ export default function Header({
               </button>
             ))}
           </nav>
-          <Button className="bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white hover:cursor-pointer">
+          <Button
+            className="bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white hover:cursor-pointer"
+            onClick={() => scrollToSection(contactRef)}
+            aria-label="Get started by contacting sales"
+          >
             Get Started
           </Button>
         </div>
@@ -139,7 +148,14 @@ export default function Header({
                 {item.name}
               </button>
             ))}
-            <Button className="bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white hover:cursor-pointer mt-2">
+            <Button
+              className="bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white hover:cursor-pointer mt-2"
+              onClick={() => {
+                scrollToSection(contactRef);
+                setMobileMenuOpen(false);
+              }}
+              aria-label="Get started by contacting sales"
+            >
               Get Started
             </Button>
           </nav>

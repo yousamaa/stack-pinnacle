@@ -50,20 +50,26 @@ export default function CTA() {
             </p>
           </div>
           <div className="flex flex-col gap-2 min-[400px]:flex-row cta-item">
-            <Button
-              size="lg"
-              className="bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white hover:cursor-pointer"
-            >
-              Get Started
-              <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-[#c5ddca] text-gray-900 hover:text-[#5ebc66] hover:bg-[#c5ddca]/10 hover:cursor-pointer"
-            >
-              Contact Sales
-            </Button>
+            <a href="#contact" className="contents">
+              <Button
+                size="lg"
+                className="bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white hover:cursor-pointer"
+                aria-label="Get started — contact our team"
+              >
+                Get Started
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+            <a href="#contact" className="contents">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#c5ddca] text-gray-900 hover:text-[#5ebc66] hover:bg-[#c5ddca]/10 hover:cursor-pointer"
+                aria-label="Contact sales"
+              >
+                Contact Sales
+              </Button>
+            </a>
           </div>
         </div>
       </div>

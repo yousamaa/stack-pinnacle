@@ -42,32 +42,36 @@ export default function Hero() {
           <div className="grid gap-6 md:gap-20 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-[#c5ddca] px-3 py-1 text-sm text-[#172737] animate-item">
-                Innovative IT Solutions
+                End‑to‑End IT Services
               </div>
               <h1 className="text-2xl sm:text-3xl! xl:text-4xl! 2xl:text-5xl! font-semibold text-[#172737] animate-item">
                 Transform Your Business with Modern
                 <FlipWords words={words} duration={2000} /> <br />
               </h1>
               <p className="text-lg text-[#848b94] animate-item">
-                We provide cutting-edge IT services to help your business thrive
-                in the digital age. From cloud solutions to cybersecurity, we've
-                got you covered.
+                Cloud, cybersecurity, custom software, analytics and managed IT — delivered by experts who align technology with your business outcomes.
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row animate-item">
-                <Button
-                  size="lg"
-                  className="bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white hover:cursor-pointer"
-                >
-                  Get Started
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-[#5ebc66] text-[#5ebc66] hover:bg-[#c5ddca] hover:cursor-pointer"
-                >
-                  Learn More
-                </Button>
+                <a href="#contact" className="contents">
+                  <Button
+                    size="lg"
+                    className="bg-[#5ebc66] hover:bg-[#5ebc66]/90 text-white hover:cursor-pointer"
+                    aria-label="Get started — contact our team"
+                  >
+                    Get Started
+                    <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+                <a href="#services" className="contents">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-[#5ebc66] text-[#5ebc66] hover:bg-[#c5ddca] hover:cursor-pointer"
+                    aria-label="Learn more about our services"
+                  >
+                    Learn More
+                  </Button>
+                </a>
               </div>
             </div>
             <div className="flex justify-center animate-item rounded-xl">

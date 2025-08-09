@@ -89,7 +89,7 @@ const Services = forwardRef<HTMLElement>((props, ref) => {
                 {service.description}
               </p>
               <Link
-                href="/"
+                href="#contact"
                 className="mt-4 flex items-center text-[#5ebc66] group-hover:text-white transition-all duration-300 group-hover:opacity-100 hover:cursor-pointer link"
               >
                 <span className="font-medium">Learn more</span>

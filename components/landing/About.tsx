@@ -55,11 +55,12 @@ const About = forwardRef<HTMLElement>((props, ref) => {
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="flex justify-center about-item">
             <Image
-              src="/placeholder.svg?height=550&width=550"
+              src="/hero_img.png"
               width={450}
               height={450}
-              alt="About Us"
-              className="rounded-lg object-cover"
+              alt="Stack Pinnacle team collaborating on IT architecture"
+              className="rounded-lg object-contain shadow-md"
+              loading="lazy"
             />
           </div>
           <div className="space-y-4">

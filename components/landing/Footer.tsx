@@ -23,22 +23,22 @@ export default function Footer() {
             <h3 className="text-lg font-bold">Services</h3>
             <ul className="space-y-2 text-sm text-[#c5ddca]">
               <li>
-                <Link href="#" className="hover:text-[#5ebc66] transition-colors">
+                <Link href="#services" className="hover:text-[#5ebc66] transition-colors">
                   Cloud Solutions
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#5ebc66] transition-colors">
+                <Link href="#services" className="hover:text-[#5ebc66] transition-colors">
                   Cybersecurity
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#5ebc66] transition-colors">
+                <Link href="#services" className="hover:text-[#5ebc66] transition-colors">
                   Software Development
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#5ebc66] transition-colors">
+                <Link href="#services" className="hover:text-[#5ebc66] transition-colors">
                   IT Infrastructure
                 </Link>
               </li>
@@ -48,12 +48,12 @@ export default function Footer() {
             <h3 className="text-lg font-bold">Company</h3>
             <ul className="space-y-2 text-sm text-[#c5ddca]">
               <li>
-                <Link href="#" className="hover:text-[#5ebc66] transition-colors">
+                <Link href="#about" className="hover:text-[#5ebc66] transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#5ebc66] transition-colors">
+                <Link href="#team" className="hover:text-[#5ebc66] transition-colors">
                   Team
                 </Link>
               </li>
@@ -85,6 +85,11 @@ export default function Footer() {
               <li>
                 <Link href="#" className="hover:text-[#5ebc66] transition-colors">
                   Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="#contact" className="hover:text-[#5ebc66] transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
