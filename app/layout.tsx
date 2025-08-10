@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://stackpinnacle.com"),
+  metadataBase: new URL("https://www.stackpinnacle.com"),
   title: {
     default: "Stack Pinnacle — Modern IT Services & Custom Software",
     template: "%s | Stack Pinnacle",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://stackpinnacle.com/",
+    url: "https://www.stackpinnacle.com/",
     title: "Stack Pinnacle — Modern IT Services & Custom Software",
     description:
       "Cloud, cybersecurity, custom software, analytics, and managed IT to accelerate your business.",
@@ -61,9 +61,18 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/stack-pinnacle-logo-no-background.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/stack-pinnacle-logo-no-background.png", type: "image/png", sizes: "48x48" },
+      { url: "/stack-pinnacle-logo-no-background.png", type: "image/png", sizes: "192x192" },
+      { url: "/stack-pinnacle-logo-no-background.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: [
+      { url: "/favicon.ico" },
+    ],
+    apple: [
+      { url: "/stack-pinnacle-logo-no-background.png", type: "image/png", sizes: "180x180" },
+    ],
   },
   robots: {
     index: true,
@@ -86,6 +95,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="theme-color" content="#172737" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/stack-pinnacle-logo-no-background.png" />
+        <link rel="apple-touch-icon" href="/stack-pinnacle-logo-no-background.png" />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
@@ -94,8 +107,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Stack Pinnacle",
-              url: "https://stackpinnacle.com",
-              logo: "https://stackpinnacle.com/stack-pinnacle-logo-no-background.png",
+              url: "https://www.stackpinnacle.com",
+              logo: "https://www.stackpinnacle.com/stack-pinnacle-logo-no-background.png",
               sameAs: [
                 "https://www.linkedin.com/company/stack-pinnacle",
                 "https://github.com/stack-pinnacle",
